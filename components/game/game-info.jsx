@@ -1,4 +1,4 @@
-import { GameSymbol } from './game-symbol';
+import { GameSymbol } from "./game-symbol";
 
 export function GameInfo({ isDrow, winnerSymbol, currentStep }) {
   if (isDrow) {

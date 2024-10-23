@@ -1,7 +1,7 @@
-import { useGameState } from './use-game-state';
-import { GameInfo } from './game-info';
-import { GameCell } from './game-cell';
-import { ResetButton } from './reset-button';
+import { useGameState } from "./use-game-state";
+import { GameInfo } from "./game-info";
+import { GameCell } from "./game-cell";
+import { ResetButton } from "./reset-button";
 
 export function Game() {
   const {
@@ -24,6 +24,7 @@ export function Game() {
       <div className="grid pt-px pl-px grid-cols-[repeat(3,_30px)] grid-rows-[repeat(3,_30px)]">
         {cells.map((symbol, index) => (
           <GameCell
+            key={index}
             symbol={symbol}
             isWinner={winnerSequence?.includes(index)}
             onClick={() => handleCellClick(index)}
