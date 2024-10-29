@@ -8,8 +8,8 @@ import {
 import { Header } from "../components/header";
 
 export default function HomePage() {
-  const [playersCount] = useState(4);
-  const { cells, currentMove, nextMove, handleCellClick } =
+  const [playersCount] = useState(2);
+  const { cells, currentMove, nextMove, handleCellClick, winnerSequence } =
     useGameState(playersCount);
 
   return (
@@ -18,16 +18,17 @@ export default function HomePage() {
       <main className="pt-6 mx-auto w-max">
         <GameTitle playersCount={playersCount} />
         <GameInfo
+          className="mt-4"
           playersCount={playersCount}
           currentMove={currentMove}
-          className="mt-4"
         />
         <GameField
+          className="mt-6"
           cells={cells}
           currentMove={currentMove}
           nextMove={nextMove}
           handleCellClick={handleCellClick}
-          className="mt-6"
+          winnerSequence={winnerSequence}
         />
       </main>
     </div>
