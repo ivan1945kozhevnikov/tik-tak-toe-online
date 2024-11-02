@@ -3,7 +3,7 @@ import avatarSrc2 from "./ui/images/avatar-2.png";
 import avatarSrc3 from "./ui/images/avatar-3.png";
 import avatarSrc4 from "./ui/images/avatar-4.png";
 
-export const GAME_SIMBOLS = {
+export const GAME_SYMBOLS = {
   ZERO: "zero",
   CROSS: "cross",
   TRINGLE: "tringle",
@@ -11,10 +11,10 @@ export const GAME_SIMBOLS = {
 };
 
 export const MOVE_ORDER = [
-  GAME_SIMBOLS.CROSS,
-  GAME_SIMBOLS.ZERO,
-  GAME_SIMBOLS.TRINGLE,
-  GAME_SIMBOLS.SQUARE,
+  GAME_SYMBOLS.CROSS,
+  GAME_SYMBOLS.ZERO,
+  GAME_SYMBOLS.TRINGLE,
+  GAME_SYMBOLS.SQUARE,
 ];
 
 export const PLAYERS = [
@@ -23,27 +23,27 @@ export const PLAYERS = [
     name: "Paromovevg",
     rating: 1230,
     avatar: avatarSrc1,
-    symbol: GAME_SIMBOLS.CROSS,
+    symbol: GAME_SYMBOLS.CROSS,
   },
   {
     id: 2,
     name: "VereIntedinglapotur",
     rating: 850,
     avatar: avatarSrc2,
-    symbol: GAME_SIMBOLS.ZERO,
+    symbol: GAME_SYMBOLS.ZERO,
   },
   {
     id: 3,
     name: "Lara",
     rating: 1400,
     avatar: avatarSrc3,
-    symbol: GAME_SIMBOLS.TRINGLE,
+    symbol: GAME_SYMBOLS.TRINGLE,
   },
   {
     id: 4,
     name: "Додик",
     rating: 760,
     avatar: avatarSrc4,
-    symbol: GAME_SIMBOLS.SQUARE,
+    symbol: GAME_SYMBOLS.SQUARE,
   },
 ];
