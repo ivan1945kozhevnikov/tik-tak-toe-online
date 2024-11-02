@@ -1,7 +1,12 @@
 import { Header } from "../components/header";
+import { Game } from "../components/game-new/game";
 
 export default function HomePage() {
-  return <HomePageLayout header={<Header />}></HomePageLayout>;
+  return (
+    <HomePageLayout header={<Header />}>
+      <Game />
+    </HomePageLayout>
+  );
 }
 
 function HomePageLayout({ header, children }) {
