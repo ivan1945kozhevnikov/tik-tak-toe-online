@@ -14,7 +14,7 @@ import {
 } from "./model/game-state-reducer";
 import { getNextMove } from "./model/get-next-move";
 import { computeWinner } from "./model/compute-winner";
-import { useReducer } from "react";
+import { useMemo, useReducer } from "react";
 import { computeWinnerSymbol } from "./model/compute-winner-symbol";
 import { computePlayerTimer } from "./model/compute-player-timer";
 import { useInterval } from "../lib/timers";
@@ -39,7 +39,9 @@ export function Game() {
     });
   });
 
-  const winnerSequence = computeWinner(gameState);
+  const winnerSequence = useMemo(() => {
+    computeWinner(gameState);
+  }, [gameState]);
   const nextMove = getNextMove(gameState);
   const winnerSymbol = computeWinnerSymbol(gameState, {
     winnerSequence,
