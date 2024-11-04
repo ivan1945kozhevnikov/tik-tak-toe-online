@@ -17,6 +17,7 @@ import { computeWinner } from "./model/compute-winner";
 import { useReducer } from "react";
 import { computeWinnerSymbol } from "./model/compute-winner-symbol";
 import { computePlayerTimer } from "./model/compute-player-timer";
+import { useInterval } from "../lib/timers";
 
 const PLAYERS_COUNT = 2;
 
@@ -25,11 +26,18 @@ export function Game() {
     gameStateReducer,
     {
       playersCount: PLAYERS_COUNT,
-      defaultTimer: 60000,
+      defaultTimer: 10000,
       currentMoveStart: Date.now(),
     },
     initGameState,
   );
+
+  useInterval(1000, gameState.currentMoveStart, () => {
+    dispatch({
+      type: GAME_STATE_ACTIONS.TICK,
+      now: Date.now(),
+    });
+  });
 
   const winnerSequence = computeWinner(gameState);
   const nextMove = getNextMove(gameState);
@@ -41,7 +49,7 @@ export function Game() {
   const winnerPlayer = PLAYERS.find((player) => player.symbol === winnerSymbol);
 
   const { cells, currentMove } = gameState;
-  
+
   return (
     <>
       <GameLayout
