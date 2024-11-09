@@ -1,6 +1,6 @@
 import { Header } from "../components/header";
 import { Game } from "../components/game-new/game";
-import { UiTextField } from "../components/uikit/ui-text-field";
+import { UiTextField } from "../components/uikit/fields/ui-text-field";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
         required
         helperText="Helper Text"
         errorText="Error text"
-        
+
       />
     </HomePageLayout>
   );
