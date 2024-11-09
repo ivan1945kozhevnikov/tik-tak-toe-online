@@ -1,10 +1,18 @@
 import { Header } from "../components/header";
 import { Game } from "../components/game-new/game";
+import { UiTextField } from "../components/uikit/ui-text-field";
 
 export default function HomePage() {
   return (
     <HomePageLayout header={<Header />}>
-      <Game />
+      <UiTextField
+        label="Label1"
+        placeholder="placeholder"
+        required
+        helperText="Helper Text"
+        errorText="Error text"
+        
+      />
     </HomePageLayout>
   );
 }
